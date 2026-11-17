@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Setrov Studio — game audio and pixel assets</title>
+  <meta name="description" content="Royalty-free game audio and pixel assets from Setrov Studio. Pay in USDC on Solana, straight to the seller’s wallet.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">Setrov Studio</p>
+      <p class="tag">Game audio and pixel assets. No AI. Royalty-free.</p>
+    </div>
+  </header>
+  <main>
+    <p class="notice" id="top-note">
+      Paid packs will be settled in USDC on Solana, sent directly to our wallet. You pay the network fee in your wallet.
+      Free packs download immediately. Licenses are inside each zip.
+    </p>
+    <p class="warn" id="wallet-warn" hidden>
+      Paid checkout is coming soon — the receiving wallet is not configured yet. Free downloads work now.
+    </p>
+    <section id="featured"></section>
+    <section id="audio"></section>
+    <section id="pixel"></section>
+    <section id="free"></section>
+  </main>
+  <footer>
+    <p>Digital goods. See <a href="TERMS.md">terms</a>. We do not ask for a card or an ID.</p>
+    <p id="support-line"></p>
+  </footer>
+  <dialog id="checkout">
+    <form class="modal" method="dialog">
+      <h3 id="co-title">Checkout</h3>
+      <p id="co-short" class="tag"></p>
+      <label for="email">Email for delivery</label>
+      <input id="email" type="email" required placeholder="you@example.com" autocomplete="email">
+      <div class="actions">
+        <button type="submit" id="co-pay">Create payment ticket</button>
+        <button type="button" class="secondary" id="co-close" value="cancel">Close</button>
+      </div>
+      <div id="ticket-wrap" hidden>
+        <p class="tag">Send the exact amount. A unique memo is included so we can email you the file. Keep this ticket.</p>
+        <pre class="ticket" id="ticket"></pre>
+        <div class="actions">
+          <button type="button" id="co-copy">Copy payment link</button>
+          <a class="btn" id="co-open" href="#">Open in wallet</a>
+        </div>
+      </div>
+    </form>
+  </dialog>
+  <script src="config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
