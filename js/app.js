@@ -79,6 +79,28 @@
     host.appendChild(grid);
   }
 
+  function relatedLine(p) {
+    const skus = p.related_skus || [];
+    if (!skus.length) return null;
+    const bySku = Object.fromEntries((store.products || []).map((x) => [x.sku, x]));
+    const kids = [];
+    skus.forEach((sku, i) => {
+      const other = bySku[sku];
+      if (!other) return;
+      if (kids.length) kids.push(document.createTextNode(" · "));
+      const isFree = !other.price_usdc;
+      const label = isFree
+        ? "Try the free download: " + other.title
+        : "Full pack: " + other.title + " (" + money(other.price_usdc) + ")";
+      const href = other.free_copy && isFree ? other.free_copy : "#p-" + other.sku;
+      const attrs = { href: href, text: label };
+      if (other.free_copy && isFree) attrs.download = "";
+      kids.push(el("a", attrs));
+    });
+    if (!kids.length) return null;
+    return el("p", { class: "related" }, kids);
+  }
+
   function card(p) {
     const isFree = !p.price_usdc;
     const action = isFree
@@ -88,13 +110,16 @@
           disabled: store.wallet_configured ? null : "disabled",
           onclick: function () { openCheckout(p); },
         });
-    return el("article", { class: "card" }, [
+    const bodyKids = [
+      el("h3", { text: p.title }),
+      el("p", { text: p.short }),
+    ];
+    const rel = relatedLine(p);
+    if (rel) bodyKids.push(rel);
+    bodyKids.push(el("div", { class: "row" }, [el("span", { class: "price", text: money(p.price_usdc) }), action]));
+    return el("article", { class: isFree ? "card lead-card" : "card", id: "p-" + p.sku }, [
       el("img", { src: p.cover, alt: p.title }),
-      el("div", { class: "body" }, [
-        el("h3", { text: p.title }),
-        el("p", { text: p.short }),
-        el("div", { class: "row" }, [el("span", { class: "price", text: money(p.price_usdc) }), action]),
-      ]),
+      el("div", { class: "body" }, bodyKids),
     ]);
   }
 
@@ -148,10 +173,10 @@
   });
 
   const products = store.products || [];
+  renderSection("free", "Free downloads", products.filter((p) => p.category === "free"));
   renderSection("featured", "Bundle", products.filter((p) => p.category === "bundle"));
   renderSection("audio", "Audio packs", products.filter((p) => p.category === "audio"));
   renderSection("pixel", "Pixel assets", products.filter((p) => p.category === "pixel"));
-  renderSection("free", "Free", products.filter((p) => p.category === "free"));
 
   const warn = document.getElementById("wallet-warn");
   if (!store.wallet_configured) warn.hidden = false;

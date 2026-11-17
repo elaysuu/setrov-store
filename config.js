@@ -12,7 +12,10 @@ window.STORE = {
       "price_usdc": 0,
       "category": "free",
       "cover": "img/free_sampler.png",
-      "free_copy": "free/free_sampler.zip"
+      "free_copy": "free/free_sampler.zip",
+      "related_skus": [
+        "audio-bundle"
+      ]
     },
     {
       "sku": "tinker-free",
@@ -21,7 +24,10 @@ window.STORE = {
       "price_usdc": 0,
       "category": "free",
       "cover": "img/pixel_fonts.png",
-      "free_copy": "free/tinker_free_v1.zip"
+      "free_copy": "free/tinker_free_v1.zip",
+      "related_skus": [
+        "pixel-fonts"
+      ]
     },
     {
       "sku": "audio-bundle",
@@ -29,7 +35,10 @@ window.STORE = {
       "short": "All seven paid audio packs in one download. WAV 44.1 kHz / 16-bit. Separately the packs list at $32.",
       "price_usdc": 9.99,
       "category": "bundle",
-      "cover": "img/all_in_one.png"
+      "cover": "img/all_in_one.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "ui-essentials",
@@ -37,7 +46,10 @@ window.STORE = {
       "short": "Clicks, blips, confirms, cancels and notifications for menus and HUDs.",
       "price_usdc": 4.0,
       "category": "audio",
-      "cover": "img/ui_essentials.png"
+      "cover": "img/ui_essentials.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "retro-8bit",
@@ -45,7 +57,10 @@ window.STORE = {
       "short": "Pickups, jumps, lasers, coins and chiptune stingers synthesized in code. No AI.",
       "price_usdc": 4.0,
       "category": "audio",
-      "cover": "img/retro_8bit_arcade.png"
+      "cover": "img/retro_8bit_arcade.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "scifi",
@@ -53,7 +68,10 @@ window.STORE = {
       "short": "Whooshes, blasters, beeps and power-ups for sci-fi games.",
       "price_usdc": 5.0,
       "category": "audio",
-      "cover": "img/scifi_interface_weapons.png"
+      "cover": "img/scifi_interface_weapons.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "impacts",
@@ -61,7 +79,10 @@ window.STORE = {
       "short": "Hits, punches, crashes and explosions with clean tails.",
       "price_usdc": 5.0,
       "category": "audio",
-      "cover": "img/impacts_explosions.png"
+      "cover": "img/impacts_explosions.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "chiptune",
@@ -69,7 +90,10 @@ window.STORE = {
       "short": "Seamless music loops for indie games, WAV + OGG, no AI.",
       "price_usdc": 6.0,
       "category": "audio",
-      "cover": "img/chiptune_music_loops.png"
+      "cover": "img/chiptune_music_loops.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "ambience",
@@ -77,7 +101,10 @@ window.STORE = {
       "short": "Looping beds for caves, night, machines, weather and more.",
       "price_usdc": 5.0,
       "category": "audio",
-      "cover": "img/ambience_loops.png"
+      "cover": "img/ambience_loops.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "footsteps",
@@ -85,7 +112,10 @@ window.STORE = {
       "short": "Footsteps on six surfaces plus light foley, synthesized (no recordings of people).",
       "price_usdc": 3.0,
       "category": "audio",
-      "cover": "img/footsteps_foley.png"
+      "cover": "img/footsteps_foley.png",
+      "related_skus": [
+        "free-sampler"
+      ]
     },
     {
       "sku": "pixel-fonts",
@@ -93,7 +123,10 @@ window.STORE = {
       "short": "Hand-designed 5x7 Brassline Regular/Bold and 3x5 Tinker. TTF, PNG atlas, BMFont. No AI.",
       "price_usdc": 2.99,
       "category": "pixel",
-      "cover": "img/pixel_fonts.png"
+      "cover": "img/pixel_fonts.png",
+      "related_skus": [
+        "tinker-free"
+      ]
     },
     {
       "sku": "pixel-ui",
@@ -101,7 +134,10 @@ window.STORE = {
       "short": "Four palettes (brass, crimson, forest, slate), 9-slice panels, buttons and icons. No AI.",
       "price_usdc": 3.99,
       "category": "pixel",
-      "cover": "img/pixel_ui_kit.png"
+      "cover": "img/pixel_ui_kit.png",
+      "related_skus": [
+        "tinker-free"
+      ]
     }
   ]
 };

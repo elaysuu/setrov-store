@@ -35,3 +35,18 @@ dialog::backdrop { background: rgba(0,0,0,.65); }
 .modal input { width: 100%; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); padding: 8px 10px; font-size: 14px; }
 .ticket { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; background: var(--bg); border: 1px dashed var(--line); border-radius: 10px; padding: 10px; overflow-wrap: anywhere; white-space: pre-wrap; }
 .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 12px 16px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; padding-bottom: 8px; }
+nav a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; }
+nav a:hover, nav a:focus { color: var(--brass); border-bottom-color: var(--brass-2); }
+.lead { margin: 20px 0 8px; padding: 20px 22px 22px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.lead h1 { margin: 0 0 10px; font-size: 28px; line-height: 1.25; }
+.lead-text { margin: 0 0 16px; color: var(--ink); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 15px; max-width: 62ch; }
+.lead-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+.card .related { margin: 0; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 12px; color: var(--muted); }
+.card .related a { text-decoration: underline; text-underline-offset: 2px; }
+.card.lead-card { border-color: var(--brass-2); }
+@media (max-width: 640px) {
+  header { flex-direction: column; align-items: start; }
+  .lead h1 { font-size: 22px; }
+}

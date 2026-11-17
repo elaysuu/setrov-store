@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elaysuu.github.io/setrov-store/sitemap.xml
